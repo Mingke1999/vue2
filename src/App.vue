@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <Event/>
+    <Forms/>
   </div>
 </template>
 
 <script>
-import Event from './components/Event.vue';
+import Forms from './components/Forms.vue';
+
 export default {
   name: 'App',
   components: {
-    Event
+    Forms
 }
 }
 </script>

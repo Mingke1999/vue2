@@ -17,8 +17,8 @@ var a = 10;
 ## Dynamic Arguments
 ## Modifiers
 ## Shorthands
-- v-bind
-- v-on
+- v-bind -> :
+- v-on -> @
 - v-if make sense but v-show hide elements by css display
 - v-else
 

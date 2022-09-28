@@ -12,6 +12,7 @@
     </ul>
     <button @click="newEvent">New Events</button>
     <button @click="concatEvent">Concat Events</button>
+    <!-- @click event click -->
     <ul>
         <li v-for="(item,index) in venues" :key="index">
             {{item}}
@@ -27,7 +28,7 @@
 </template>
 
 <script>
-import Vue from 'vue';
+
 export default {
     data(){
         return{
@@ -62,7 +63,9 @@ export default {
                 attack:"aoe"
             }
         }
-    },methods:{
+    },
+    //at methods we could define functions
+    methods:{
         newEvent(){
             this.venues.push('elden rings');
         },

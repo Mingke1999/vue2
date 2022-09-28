@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <button v-on:click="countClicks">Trigger</button>
     <p>{{count}}</p>
     <ol>

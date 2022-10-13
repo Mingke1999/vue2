@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <Templates/>
+    <!-- <Templates/>
     <Condition/>
     <Event/>
     <List/>
     <Forms/>
     <Computed/>
-    <Watcher/>
+    <Watcher/> -->
+    <ClassAndStyle/>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import Template from './components/Templates.vue';
 import Event from './components/Event.vue';
 import Condition from './components/Condition.vue';
 import Watcher from './components/Watcher.vue';
+import ClassAndStyle from './components/ClassAndStyle.vue';
 
 export default {
   name: 'App',
@@ -28,7 +30,8 @@ export default {
     Template,
     Event,
     Condition,
-    Watcher
+    Watcher,
+    ClassAndStyle
 }
 }
 </script>

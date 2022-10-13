@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <Service/>
+    <!-- <Service/> -->
+    <Parent/>
   </div>
 </template>
 
 <script>
-import Service from './Components/Service.vue';
-
+//import Service from './Components/Service.vue';
+import Parent from './Sync/Parent.vue';
 export default {
   name: 'App',
   components: {
-    Service
+    //Service
+    Parent
 }
 }
 </script>

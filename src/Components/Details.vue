@@ -8,9 +8,19 @@
 <script>
 export default {
     name:"Details",
-    props:[
-        "serviceId"
-    ]
+    props:{
+        serviceId:{
+            type:Number, //fix passing type
+            default:15, //could give a default value,
+            required:true
+        },
+        values:{
+            type:Array, //factory function required
+            default:function(){
+                return []
+            }
+        }
+    }
 }
 </script>
 

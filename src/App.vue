@@ -1,37 +1,16 @@
 <template>
   <div id="app">
-    <!-- <Templates/>
-    <Condition/>
-    <Event/>
-    <List/>
-    <Forms/>
-    <Computed/>
-    <Watcher/> -->
-    <ClassAndStyle/>
+    <Service/>
   </div>
 </template>
 
 <script>
-import Forms from './components/Forms.vue';
-import Computed from './components/Computed.vue';
-import List from './components/List.vue';
-import Template from './components/Templates.vue';
-import Event from './components/Event.vue';
-import Condition from './components/Condition.vue';
-import Watcher from './components/Watcher.vue';
-import ClassAndStyle from './components/ClassAndStyle.vue';
+import Service from './Components/Service.vue';
 
 export default {
   name: 'App',
   components: {
-    Forms,
-    Computed,
-    List,
-    Template,
-    Event,
-    Condition,
-    Watcher,
-    ClassAndStyle
+    Service
 }
 }
 </script>

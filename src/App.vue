@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <Service/> -->
     <!-- <Parent/> -->
-    <Slot>
+    <!-- <Slot>
       <template v-slot:header>
         <div>Header</div>
         <div>Hello A New Slot</div>
@@ -12,22 +12,39 @@
         <div>Hello A New Slot</div>
       </template>
     </Slot>
-    <Slot />
+    <Slot /> -->
+    <keep-alive include="SelectA">
+      <!-- <keep-alive exclude="SelectA" :max="5"> -->
+      <component :is="current"></component>
+    </keep-alive>
+    <button @click="clickHandle">switch</button>
   </div>
 </template>
 
 <script>
 //import Service from './Components/Service.vue';
 //import Parent from './Sync/Parent.vue';
-import Slot from './Slot/Slot.vue';
+//import Slot from './Slot/Slot.vue';
+import SelectA from './Dynamic/SelectA.vue';
+import SelectB from './Dynamic/SelectB.vue';
 
 export default {
   name: 'App',
   components: {
     //Service
     //Parent
-    Slot,
-}
+    //Slot,
+    SelectA,
+    SelectB
+},data(){
+  return{
+    current:SelectA
+  }
+},methods:{
+    clickHandle(){
+      this.current = this.current === SelectA ? SelectB : SelectA
+    },
+  }
 }
 </script>
 

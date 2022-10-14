@@ -1,18 +1,32 @@
 <template>
   <div id="app">
     <!-- <Service/> -->
-    <Parent/>
+    <!-- <Parent/> -->
+    <Slot>
+      <template v-slot:header>
+        <div>Header</div>
+        <div>Hello A New Slot</div>
+      </template>
+      <template #footer="slotProps">
+        <div>Footer: {{slotProps.message}}</div>
+        <div>Hello A New Slot</div>
+      </template>
+    </Slot>
+    <Slot />
   </div>
 </template>
 
 <script>
 //import Service from './Components/Service.vue';
-import Parent from './Sync/Parent.vue';
+//import Parent from './Sync/Parent.vue';
+import Slot from './Slot/Slot.vue';
+
 export default {
   name: 'App',
   components: {
     //Service
-    Parent
+    //Parent
+    Slot,
 }
 }
 </script>

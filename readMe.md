@@ -35,3 +35,13 @@ var a = 10;
 - v-model.lazy after pressing enter or confirm then show input
 - v-model.trim no space
 - v-model.number
+
+## Slot
+``` 
+Insert addtional element when calling a component, and diyplay it by slot.
+Double close tags only.
+Similar to react compose
+```
+- Compilation Scope
+- declare value where the value passed from
+- v-slot -> #

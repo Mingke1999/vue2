@@ -17,7 +17,7 @@
       <component :is="current"></component>
     </keep-alive>
     <button @click="clickHandle">switch</button> -->
-    <Hello :message="message"/>
+    <Hello/>
   </div>
 </template>
 

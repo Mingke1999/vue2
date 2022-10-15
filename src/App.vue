@@ -13,11 +13,11 @@
       </template>
     </Slot>
     <Slot /> -->
-    <keep-alive include="SelectA">
-      <!-- <keep-alive exclude="SelectA" :max="5"> -->
+    <!-- <keep-alive include="SelectA" exclude="SelectB">
       <component :is="current"></component>
     </keep-alive>
-    <button @click="clickHandle">switch</button>
+    <button @click="clickHandle">switch</button> -->
+    <Hello :message="message"/>
   </div>
 </template>
 
@@ -25,25 +25,33 @@
 //import Service from './Components/Service.vue';
 //import Parent from './Sync/Parent.vue';
 //import Slot from './Slot/Slot.vue';
-import SelectA from './Dynamic/SelectA.vue';
-import SelectB from './Dynamic/SelectB.vue';
-
+//import SelectA from './Dynamic/SelectA.vue';
+//import SelectB from './Dynamic/SelectB.vue';
+// const SelectB = () => import("./Dynamic/SelectB.vue") //method 1
+// const SelectB = () => ({ //method 2
+//   component:import("./Dynamic/SelectB.vue"),
+//   delay:3000, //priority 200 1000 3000
+//   error:'Some Error',
+// })
+import Hello from './Edges/Hello.vue'
 export default {
   name: 'App',
   components: {
     //Service
     //Parent
     //Slot,
-    SelectA,
-    SelectB
+    //SelectA,
+    //SelectB,
+    Hello
 },data(){
   return{
-    current:SelectA
+    //current:SelectA
+    message:"Message From App"
   }
 },methods:{
-    clickHandle(){
-      this.current = this.current === SelectA ? SelectB : SelectA
-    },
+    // clickHandle(){
+    //   this.current = this.current === SelectA ? SelectB : SelectA
+    // },
   }
 }
 </script>

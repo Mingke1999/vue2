@@ -45,3 +45,5 @@ Similar to react compose
 - Compilation Scope
 - declare value where the value passed from
 - v-slot -> #
+- edge case: grab variable from main.js by $root.name
+- not recommend, passing :name="value" give from parent by $parent.name

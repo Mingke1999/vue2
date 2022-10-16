@@ -52,6 +52,10 @@ export default {
     // clickHandle(){
     //   this.current = this.current === SelectA ? SelectB : SelectA
     // },
+  },provide(){
+    return{
+      flag:'Something From App.vue'
+    }
   }
 }
 </script>

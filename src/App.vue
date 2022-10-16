@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <Service/> -->
-    <!-- <Parent/> -->
-    <!-- <Slot>
+    <!-- <Service/>
+    <Parent/>
+    <Slot>
       <template v-slot:header>
         <div>Header</div>
         <div>Hello A New Slot</div>
@@ -12,50 +12,62 @@
         <div>Hello A New Slot</div>
       </template>
     </Slot>
-    <Slot /> -->
-    <!-- <keep-alive include="SelectA" exclude="SelectB">
+    <Slot />
+    <keep-alive include="SelectA" exclude="SelectB">
       <component :is="current"></component>
     </keep-alive>
-    <button @click="clickHandle">switch</button> -->
+    <button @click="clickHandle">switch</button>
     <Hello/>
+    <LifeCycleVue/> -->
+    <!-- <Child1/>
+    <Child2/> -->
   </div>
 </template>
 
 <script>
-//import Service from './Components/Service.vue';
-//import Parent from './Sync/Parent.vue';
-//import Slot from './Slot/Slot.vue';
-//import SelectA from './Dynamic/SelectA.vue';
-//import SelectB from './Dynamic/SelectB.vue';
-// const SelectB = () => import("./Dynamic/SelectB.vue") //method 1
+// import Service from './ModuleA/Components/Service.vue';
+// import Parent from './ModuleA/Sync/Parent.vue';
+// import Slot from './ModuleA/Slot/Slot.vue';
+// import SelectA from './ModuleA/Dynamic/SelectA.vue';
+// import SelectB from './ModuleA/Dynamic/SelectB.vue';
+//const SelectB = () => import("./ModuleA/Dynamic/SelectB.vue") //method 1
 // const SelectB = () => ({ //method 2
-//   component:import("./Dynamic/SelectB.vue"),
+//   component:import("./ModuleA/Dynamic/SelectB.vue"),
 //   delay:3000, //priority 200 1000 3000
 //   error:'Some Error',
 // })
-import Hello from './Edges/Hello.vue'
+// import Hello from './ModuleA/Edges/Hello.vue'
+// import LifeCycleVue from './ModuleA/LifeCycle/LifeCycle.vue';
+// import Child1 from './ModuleA/EventBus/Child1.vue';
+// import Child2 from './ModuleA/EventBus/Child2.vue';
 export default {
   name: 'App',
   components: {
-    //Service
-    //Parent
-    //Slot,
-    //SelectA,
-    //SelectB,
-    Hello
-},data(){
-  return{
-    //current:SelectA
-    message:"Message From App"
-  }
-},methods:{
-    // clickHandle(){
-    //   this.current = this.current === SelectA ? SelectB : SelectA
-    // },
-  },provide(){
-    return{
-      flag:'Something From App.vue'
-    }
+    // Service,
+    // Parent,
+    // Slot,
+    // SelectA,
+    // SelectB,
+    // Hello,
+    // LifeCycleVue,
+    // Child1,
+    // Child2
+},
+data(){
+//  return{
+//     current:SelectA,
+//     message:"Message From App"
+//  }
+},
+methods:{
+//     clickHandle(){
+//       this.current = this.current === SelectA ? SelectB : SelectA
+//     },
+//  },
+//   provide(){
+//     return{
+//       flag:'Something From App.vue'
+//     }
   }
 }
 </script>

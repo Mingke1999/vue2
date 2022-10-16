@@ -19,8 +19,8 @@
     <button @click="clickHandle">switch</button>
     <Hello/>
     <LifeCycleVue/> -->
-    <!-- <Child1/>
-    <Child2/> -->
+    <Child1/>
+    <!-- <Child2/> -->
   </div>
 </template>
 
@@ -38,7 +38,7 @@
 // })
 // import Hello from './ModuleA/Edges/Hello.vue'
 // import LifeCycleVue from './ModuleA/LifeCycle/LifeCycle.vue';
-// import Child1 from './ModuleA/EventBus/Child1.vue';
+import Child1 from './ModuleA/EventBus/Child1.vue';
 // import Child2 from './ModuleA/EventBus/Child2.vue';
 export default {
   name: 'App',
@@ -50,7 +50,7 @@ export default {
     // SelectB,
     // Hello,
     // LifeCycleVue,
-    // Child1,
+    Child1,
     // Child2
 },
 data(){

@@ -1,4 +1,7 @@
-# Template Syntax
+## VUE CLI install
+vue install -g @vue/cli
+vue create project-name
+## Template Syntax
 ```
 Vue.js uses an HTML-based template syntax that allows you to declaratively bind the rendered DOM to the underlying Vue instance’s data.
 npm run serve
@@ -13,6 +16,7 @@ var a = 10;
 10 > 5 ? 'ok' : 'no';
 ```
 ## Directives
+- global: main.js mixins
 ## Arguments
 ## Dynamic Arguments
 ## Modifiers
@@ -47,3 +51,5 @@ Similar to react compose
 - v-slot -> #
 - edge case: grab variable from main.js by $root.name
 - not recommend, passing :name="value" give from parent by $parent.name
+
+

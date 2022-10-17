@@ -28,8 +28,9 @@
     <!-- <Animation/> -->
 
     <!--Module C-->
-    <Minxins/>
-    <Child/>
+    <!-- <Minxins/>
+    <Child/> -->
+    <MyDirectivesVue/>
   </div>
 </template>
 
@@ -50,8 +51,9 @@
 // import Child1 from './ModuleA/EventBus/Child1.vue';
 // import Child2 from './ModuleA/EventBus/Child2.vue';
 // import Animation from './ModuleB/Animation.vue';
-import Minxins from './ModuleC/Mixins.vue';
-import Child from './ModuleC/Child.vue';
+// import Minxins from './ModuleC/Mixins.vue';
+// import Child from './ModuleC/Child.vue';
+import MyDirectivesVue from './ModuleC/MyDirectives.vue';
 export default {
   name: 'App',
   components: {
@@ -65,8 +67,9 @@ export default {
     // Child1,
     // Child2
     //Animation
-    Minxins,
-    Child
+    // Minxins,
+    // Child
+    MyDirectivesVue
 },
 data(){
 //  return{

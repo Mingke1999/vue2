@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <!-- <Service/>
+    
+    <!-- Module A -->
+    <!-- 
+    <Service/>
     <Parent/>
     <Slot>
       <template v-slot:header>
@@ -19,8 +22,11 @@
     <button @click="clickHandle">switch</button>
     <Hello/>
     <LifeCycleVue/> -->
-    <Child1/>
+    <!-- <Child1/> -->
     <!-- <Child2/> -->
+
+    <!--Module B-->
+    <!-- <Animation/> -->
   </div>
 </template>
 
@@ -30,7 +36,7 @@
 // import Slot from './ModuleA/Slot/Slot.vue';
 // import SelectA from './ModuleA/Dynamic/SelectA.vue';
 // import SelectB from './ModuleA/Dynamic/SelectB.vue';
-//const SelectB = () => import("./ModuleA/Dynamic/SelectB.vue") //method 1
+// const SelectB = () => import("./ModuleA/Dynamic/SelectB.vue") //method 1
 // const SelectB = () => ({ //method 2
 //   component:import("./ModuleA/Dynamic/SelectB.vue"),
 //   delay:3000, //priority 200 1000 3000
@@ -38,8 +44,9 @@
 // })
 // import Hello from './ModuleA/Edges/Hello.vue'
 // import LifeCycleVue from './ModuleA/LifeCycle/LifeCycle.vue';
-import Child1 from './ModuleA/EventBus/Child1.vue';
+// import Child1 from './ModuleA/EventBus/Child1.vue';
 // import Child2 from './ModuleA/EventBus/Child2.vue';
+// import Animation from './ModuleB/Animation.vue';
 export default {
   name: 'App',
   components: {
@@ -50,8 +57,9 @@ export default {
     // SelectB,
     // Hello,
     // LifeCycleVue,
-    Child1,
+    //Child1,
     // Child2
+    //Animation
 },
 data(){
 //  return{
@@ -68,7 +76,7 @@ methods:{
 //     return{
 //       flag:'Something From App.vue'
 //     }
-  }
+ }
 }
 </script>
 

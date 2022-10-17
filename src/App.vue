@@ -2,31 +2,34 @@
   <div id="app">
     
     <!-- Module A -->
-    <!-- 
-    <Service/>
-    <Parent/>
-    <Slot>
-      <template v-slot:header>
-        <div>Header</div>
-        <div>Hello A New Slot</div>
-      </template>
-      <template #footer="slotProps">
-        <div>Footer: {{slotProps.message}}</div>
-        <div>Hello A New Slot</div>
-      </template>
-    </Slot>
-    <Slot />
-    <keep-alive include="SelectA" exclude="SelectB">
-      <component :is="current"></component>
-    </keep-alive>
-    <button @click="clickHandle">switch</button>
-    <Hello/>
-    <LifeCycleVue/> -->
+    <!--<Service/>
+        <Parent/>
+        <Slot>
+          <template v-slot:header>
+            <div>Header</div>
+            <div>Hello A New Slot</div>
+          </template>
+          <template #footer="slotProps">
+            <div>Footer: {{slotProps.message}}</div>
+            <div>Hello A New Slot</div>
+          </template>
+        </Slot>
+        <Slot />
+        <keep-alive include="SelectA" exclude="SelectB">
+          <component :is="current"></component>
+        </keep-alive>
+        <button @click="clickHandle">switch</button>
+        <Hello/>
+        <LifeCycleVue/> -->
     <!-- <Child1/> -->
     <!-- <Child2/> -->
 
     <!--Module B-->
     <!-- <Animation/> -->
+
+    <!--Module C-->
+    <Minxins/>
+    <Child/>
   </div>
 </template>
 
@@ -47,6 +50,8 @@
 // import Child1 from './ModuleA/EventBus/Child1.vue';
 // import Child2 from './ModuleA/EventBus/Child2.vue';
 // import Animation from './ModuleB/Animation.vue';
+import Minxins from './ModuleC/Mixins.vue';
+import Child from './ModuleC/Child.vue';
 export default {
   name: 'App',
   components: {
@@ -57,9 +62,11 @@ export default {
     // SelectB,
     // Hello,
     // LifeCycleVue,
-    //Child1,
+    // Child1,
     // Child2
     //Animation
+    Minxins,
+    Child
 },
 data(){
 //  return{

@@ -29,9 +29,12 @@
 
     <!--Module C-->
     <!-- <Minxins/>
-    <Child/> -->
-    <!-- <MyDirectivesVue/> -->
-    <RenderVue/>
+    <Child/>
+    <MyDirectivesVue/>
+    <RenderVue/> -->
+
+    <!-- Module D -->
+    <FirstAxios/>
   </div>
 </template>
 
@@ -54,9 +57,9 @@
 // import Animation from './ModuleB/Animation.vue';
 // import Minxins from './ModuleC/Mixins.vue';
 // import Child from './ModuleC/Child.vue';
-import MyDirectivesVue from './ModuleC/MyDirectives.vue';
-import RenderVue from './ModuleC/rendering.vue';
-
+//import MyDirectivesVue from './ModuleC/MyDirectives.vue';
+//import RenderVue from './ModuleC/rendering.vue';
+import FirstAxios from './ModuleD/FirstAxios.vue'
 export default {
   name: 'App',
   components: {
@@ -72,16 +75,17 @@ export default {
     //Animation
     // Minxins,
     // Child,
-    MyDirectivesVue,
-    RenderVue
+    //MyDirectivesVue,
+    //RenderVue
+    FirstAxios
 },
-data(){
+//data(){
 //  return{
 //     current:SelectA,
 //     message:"Message From App"
 //  }
-},
-methods:{
+//},
+//methods:{
 //     clickHandle(){
 //       this.current = this.current === SelectA ? SelectB : SelectA
 //     },
@@ -90,7 +94,7 @@ methods:{
 //     return{
 //       flag:'Something From App.vue'
 //     }
- }
+// }
 }
 </script>
 

@@ -20,9 +20,9 @@
         </keep-alive>
         <button @click="clickHandle">switch</button>
         <Hello/>
-        <LifeCycleVue/> -->
-    <!-- <Child1/> -->
-    <!-- <Child2/> -->
+        <LifeCycleVue/>
+        <Child1/>
+        <Child2/> -->
 
     <!--Module B-->
     <!-- <Animation/> -->
@@ -30,7 +30,8 @@
     <!--Module C-->
     <!-- <Minxins/>
     <Child/> -->
-    <MyDirectivesVue/>
+    <!-- <MyDirectivesVue/> -->
+    <RenderVue/>
   </div>
 </template>
 
@@ -54,6 +55,8 @@
 // import Minxins from './ModuleC/Mixins.vue';
 // import Child from './ModuleC/Child.vue';
 import MyDirectivesVue from './ModuleC/MyDirectives.vue';
+import RenderVue from './ModuleC/rendering.vue';
+
 export default {
   name: 'App',
   components: {
@@ -68,8 +71,9 @@ export default {
     // Child2
     //Animation
     // Minxins,
-    // Child
-    MyDirectivesVue
+    // Child,
+    MyDirectivesVue,
+    RenderVue
 },
 data(){
 //  return{

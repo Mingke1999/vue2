@@ -50,7 +50,8 @@
     </div> -->
     
     <!-- Module D -->
-    <FirstAxios/>
+    <!-- <FirstAxios/> -->
+    <PackagingVue/>
   </div>
 </template>
 
@@ -77,7 +78,8 @@
 //import MyDirectivesVue from './ModuleC/MyDirectives.vue';
 //import RenderVue from './ModuleC/rendering.vue';
 
-import FirstAxios from './ModuleD/FirstAxios.vue'
+//import FirstAxios from './ModuleD/FirstAxios.vue'
+import PackagingVue from './ModuleD/Packaging.vue'
 export default {
   name: 'App',
   components: {
@@ -95,7 +97,8 @@ export default {
     // Child,
     //MyDirectivesVue,
     //RenderVue
-    FirstAxios
+    //FirstAxios
+    PackagingVue
 },
 data(){
 return{

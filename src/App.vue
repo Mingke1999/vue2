@@ -32,9 +32,24 @@
     <Child/>
     <MyDirectivesVue/>
     <RenderVue/> -->
-
+    <ul>
+      <li v-for="(item,index) in order" :key="index">
+        <span>{{item.name}}</span><span>{{item.price | money}}</span>
+      </li>
+    </ul>
+    <div>
+      <p>
+        {{bookName | author}}
+      </p>
+      <p>
+        {{"Another Book" | author}}
+      </p>
+      <p>
+        {{"Another Book" | author | money}}
+      </p>
+    </div>
     <!-- Module D -->
-    <FirstAxios/>
+    <!-- <FirstAxios/> -->
   </div>
 </template>
 
@@ -59,7 +74,7 @@
 // import Child from './ModuleC/Child.vue';
 //import MyDirectivesVue from './ModuleC/MyDirectives.vue';
 //import RenderVue from './ModuleC/rendering.vue';
-import FirstAxios from './ModuleD/FirstAxios.vue'
+//import FirstAxios from './ModuleD/FirstAxios.vue'
 export default {
   name: 'App',
   components: {
@@ -77,14 +92,34 @@ export default {
     // Child,
     //MyDirectivesVue,
     //RenderVue
-    FirstAxios
+    //FirstAxios
 },
-//data(){
-//  return{
+data(){
+return{
 //     current:SelectA,
-//     message:"Message From App"
-//  }
-//},
+//     message:"Message From App".
+bookName:"Kevin Cooking tutorial",
+order:[
+  {
+    id:1001,
+    name:"candy",
+    price:11
+  },
+  {
+    id:1001,
+    name:"honey",
+    price:4.8
+  }
+]
+}
+},
+filters:{ //must be filters
+  author:function(val){
+    if(val){
+      return val + "Author: Mingke"
+    }
+  }
+}
 //methods:{
 //     clickHandle(){
 //       this.current = this.current === SelectA ? SelectB : SelectA
@@ -94,6 +129,9 @@ export default {
 //     return{
 //       flag:'Something From App.vue'
 //     }
+// }
+// mounted(){
+//   this.$toast("My first toast",{duration:5000,defaultType:"danger"})
 // }
 }
 </script>

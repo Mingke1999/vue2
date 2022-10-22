@@ -1,0 +1,25 @@
+.vue-toast{
+    position:fixed;
+    color:black;
+    width: 50%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    top:50%;
+    left: 50%;
+    margin-left: -25%;
+    margin-top: -25%;
+}
+.toast-success{
+    color:rgb(48, 160, 48);
+}
+.toast-danger{
+    color: rgb(207, 47, 47);
+}
+.toast-warning{
+    color: orange;
+}

@@ -1,10 +1,14 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './registerServiceWorker'
-import "./ModuleA/EventBus/eventbus.js"
-import "./ModuleC/directives"
+import Vue from 'vue';
+import App from './App.vue';
+import './registerServiceWorker';
+import "./ModuleA/EventBus/eventbus.js";
+import "./ModuleC/directives";
+//import Toast from './ModuleC/plugins/toast';
+//import "./ModuleC/plugins/toast/toast.css"
+import "./ModuleC/filter"
 Vue.config.productionTip = false
 
+//Vue.use(Toast)
 // Vue.mixin({
   //global mixin
 //   data(){

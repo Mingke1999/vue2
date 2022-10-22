@@ -8,7 +8,7 @@
 </div>
 </template>
 <script>
-import axios from 'axios';
+
 
 export default {
     data(){
@@ -20,7 +20,7 @@ export default {
         }
     },
     mounted(){
-        axios.get("http://iwenwiki.com/api/blueberrypai/getChengpinDetails.php")
+        this.$axios.get("http://iwenwiki.com/api/blueberrypai/getChengpinDetails.php")
         .then(res=>{
             console.log(res.data)
             if(res.status === 200){
@@ -32,7 +32,7 @@ export default {
             console.log(res)
         })
 
-        axios.post("http://iwenwiki.com/api/blueberrypai/login.php",{
+        this.$axios.post("http://iwenwiki.com/api/blueberrypai/login.php",{
             user_id:"iwen@qq.com",
             password:"iwen123",
             verification_code:"crfvw"

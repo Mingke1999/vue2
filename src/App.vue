@@ -31,7 +31,7 @@
     <!-- <Minxins/>
     <Child/>
     <MyDirectivesVue/>
-    <RenderVue/> -->
+    <RenderVue/>
     <ul>
       <li v-for="(item,index) in order" :key="index">
         <span>{{item.name}}</span><span>{{item.price | money}}</span>
@@ -47,9 +47,10 @@
       <p>
         {{"Another Book" | author | money}}
       </p>
-    </div>
+    </div> -->
+    
     <!-- Module D -->
-    <!-- <FirstAxios/> -->
+    <FirstAxios/>
   </div>
 </template>
 
@@ -70,11 +71,13 @@
 // import Child1 from './ModuleA/EventBus/Child1.vue';
 // import Child2 from './ModuleA/EventBus/Child2.vue';
 // import Animation from './ModuleB/Animation.vue';
+
 // import Minxins from './ModuleC/Mixins.vue';
 // import Child from './ModuleC/Child.vue';
 //import MyDirectivesVue from './ModuleC/MyDirectives.vue';
 //import RenderVue from './ModuleC/rendering.vue';
-//import FirstAxios from './ModuleD/FirstAxios.vue'
+
+import FirstAxios from './ModuleD/FirstAxios.vue'
 export default {
   name: 'App',
   components: {
@@ -92,12 +95,12 @@ export default {
     // Child,
     //MyDirectivesVue,
     //RenderVue
-    //FirstAxios
+    FirstAxios
 },
 data(){
 return{
-//     current:SelectA,
-//     message:"Message From App".
+//current:SelectA,
+message:"Message From App",
 bookName:"Kevin Cooking tutorial",
 order:[
   {

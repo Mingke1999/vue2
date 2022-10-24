@@ -3,7 +3,7 @@ import axios from "axios";
  * 
  */
 const instance =  axios.create({
-    baseURL:"https://eventeasyau.azurewebsites.net/api",
+    baseURL:"/api",
     timeout:7000,
     //withCredentials:true
 })

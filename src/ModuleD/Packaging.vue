@@ -8,7 +8,7 @@
 import axios from './request'
 export default {
     mounted(){
-        axios.get("/user/getall")
+        axios.get("/api/user/getall")
         .then(res=>{
             console.log(res)
         }).catch(err=>{

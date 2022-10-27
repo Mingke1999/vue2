@@ -5,6 +5,11 @@
     <div>
         <p>{{this.details}}</p>
     </div>
+    <div>
+        <router-link :to="`/details/${$route.params.id}/booking`">Booking</router-link>
+        <router-link :to="`/details/${$route.params.id}/review`">Review</router-link>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 

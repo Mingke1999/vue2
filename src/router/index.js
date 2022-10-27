@@ -1,11 +1,15 @@
 import VueRouter from "vue-router";
 import Home from '../ModuleE/Home.vue';
+import AD from '../ModuleE/AD.vue';
 
 export default new VueRouter({
     routes:[
         {
             path:'/',
-            component:Home,
+            components:{
+                default:Home,
+                ad:AD
+            },
             name:'home'
         },
         {
@@ -31,7 +35,10 @@ export default new VueRouter({
         },
         {
             path:'/service',
-            component:()=>import('../ModuleE/Services.vue'),
+            components:{
+                default:()=>import('../ModuleE/Services.vue'),
+                ad:AD
+            },
             name:'service'
         },
         {

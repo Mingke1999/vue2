@@ -30,25 +30,25 @@ export default {
         }
     },
     beforeRouteEnter(to,from,next){
-        console.log("before route enter",this);
-        console.log("before route enter",from);
-        console.log("before route enter",to);
+        // console.log("before route enter",this);
+        // console.log("before route enter",from);
+        // console.log("before route enter",to);
         next(vm=>{
           console.log(vm.message)
         });
     },
     beforeRouteUpdate(to,from,next){
-        console.log("before route Update",this);
-        console.log("before route Update",from);
-        console.log("before route Update",to);
-        console.log(this.message);
+        // console.log("before route Update",this);
+        // console.log("before route Update",from);
+        // console.log("before route Update",to);
+        // console.log(this.message);
         next();
     },
     beforeRouteLeave(to,from,next){
-        console.log("before route leave",this);
-        console.log("before route leave",from);
-        console.log("before route leave",to);
-        console.log(this.message);
+        // console.log("before route leave",this);
+        // console.log("before route leave",from);
+        // console.log("before route leave",to);
+        // console.log(this.message);
         next();
     },
 }

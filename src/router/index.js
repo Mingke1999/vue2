@@ -22,7 +22,10 @@ const router = new VueRouter({
             path:'/dash',
             //async loading
             component:()=>import('../ModuleE/Dashboard.vue'),
-            name:'dashboard'
+            name:'dashboard',
+            meta:{
+                requiresAuth:true
+            }
            
         },{
             path:'/details/:id',
@@ -56,6 +59,13 @@ const router = new VueRouter({
             }
         },
         {
+            path:'/login',
+            name:'login',
+            components:{
+                default: ()=>import('../ModuleE/Login.vue'),
+            }
+        },
+        {
             path:'*',
             component:()=>import('../ModuleE/NotFound.vue')
         }
@@ -64,11 +74,22 @@ const router = new VueRouter({
 /**
  * global routing guard pre-set
  */
-// router.beforeEach((to,from,next)=>{
-//     console.log(from);
-//     console.log(to);
-//     next();
-// })
+router.beforeEach((to,from,next)=>{
+    //console.log(to);
+    if(to.matched.some(record=>record.meta.requiresAuth)){
+        //make the system requiring authLogin
+        const token = false;
+        if(token){  //user logged in
+            next();
+        }else{  //user needs to login
+            next('/login')
+        }
+    }else{
+        //otherwise jump to the actual page
+        next();
+    }
+   
+})
 // router.afterEach((to,from)=>{
 //     console.log(from);
 //     console.log(to);

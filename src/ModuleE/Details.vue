@@ -2,6 +2,7 @@
   <div>
     <h3>User Details</h3>
     <p>UserID {{$route.params.id}}</p>
+    <p>props id -> {{id}}</p>
     <div>
         <p>{{this.details}}</p>
     </div>
@@ -29,7 +30,14 @@ export default {
         ).catch(err=>{
             console.log(err)
         })
-    }
+    },
+    props:{
+        id:{
+            type:[String,Number],
+            default:0
+        }
+    },
+    
 }
 </script>
 

@@ -2,15 +2,21 @@ import VueRouter from "vue-router";
 import Home from '../ModuleE/Home.vue';
 import AD from '../ModuleE/AD.vue';
 
-export default new VueRouter({
+const router = new VueRouter({
+    mode:'history',
     routes:[
+        // {
+        //     path:'/home',
+        //     redirect:'/'
+        // },
         {
             path:'/',
             components:{
                 default:Home,
                 ad:AD
             },
-            name:'home'
+            name:'home',
+            alias:'/home'
         },
         {
             path:'/dash',
@@ -20,6 +26,7 @@ export default new VueRouter({
            
         },{
             path:'/details/:id',
+            redirect:'/details/:id/booking',
             component:()=>import('../ModuleE/Details.vue'),
             children:[
                 {
@@ -31,15 +38,22 @@ export default new VueRouter({
                     component:()=>import('../ModuleE/Details/Review.vue')
                 }
             ],
-            name:'detail'
+            name:'detail',
+            props:true
         },
         {
-            path:'/service',
+            path:'/service/:id',
             components:{
                 default:()=>import('../ModuleE/Services.vue'),
                 ad:AD
             },
-            name:'service'
+            name:'service',
+            //Per-Route Guard
+            beforeEnter:(to,from,next)=>{
+                console.log(from);
+                console.log(to);
+                next();
+            }
         },
         {
             path:'*',
@@ -47,3 +61,18 @@ export default new VueRouter({
         }
     ]
 })
+/**
+ * global routing guard pre-set
+ */
+// router.beforeEach((to,from,next)=>{
+//     console.log(from);
+//     console.log(to);
+//     next();
+// })
+// router.afterEach((to,from)=>{
+//     console.log(from);
+//     console.log(to);
+// })
+
+
+export default router

@@ -55,7 +55,7 @@
     <!-- <router-link to="/">Home</router-link> | -->
     <router-link :to="{name:'home'}">Home</router-link> |
     <router-link to="/dash">Dashboard</router-link> |
-    <router-link to="/service">Services</router-link>
+    <router-link to="/service/1001">Services</router-link>
     <router-view/>
     <router-view name="ad"></router-view>
   </div>

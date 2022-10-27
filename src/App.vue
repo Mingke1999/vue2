@@ -52,9 +52,9 @@
     <!-- <FirstAxios/> -->
     <!-- <PackagingVue/> -->
     <!--Module E-->
-    <router-view></router-view>
     <router-link to="/">Home</router-link> |
     <router-link to="/dash">Dashboard</router-link>
+    <router-view></router-view>
   </div>
 </template>
 

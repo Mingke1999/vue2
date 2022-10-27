@@ -1,5 +1,4 @@
 import VueRouter from "vue-router";
-import Dash from '../ModuleE/Dashboard.vue';
 import Home from '../ModuleE/Home.vue';
 
 export default new VueRouter({
@@ -10,7 +9,14 @@ export default new VueRouter({
         },
         {
             path:'/dash',
-            component:Dash
+            //async loading
+            component:()=>import('../ModuleE/Dashboard.vue')
+        },{
+            path:'/details/:id',
+            component:()=>import('../ModuleE/Details.vue')
+        },{
+            path:'*',
+            component:()=>import('../ModuleE/NotFound.vue')
         }
     ]
 })

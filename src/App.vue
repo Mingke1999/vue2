@@ -56,7 +56,9 @@
     <router-link exact :to="{name:'home'}">Home</router-link> |
     <router-link exact to="/dash">Dashboard</router-link> |
     <router-link exact to="/service/1001">Services</router-link>
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
     <router-view name="ad"></router-view>
   </div>
 </template>

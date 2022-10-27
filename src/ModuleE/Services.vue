@@ -4,6 +4,8 @@
     <button @click="goHome">Home page</button>
     <p>current id: {{$route.params.id}}</p>
     <button @click="onUpdate">Test before router update</button>
+    <button @click="cacheHandle">Caching</button>
+    <p>{{message}}</p>
   </div>
 </template>
 
@@ -27,6 +29,9 @@ export default {
               id:1002
             }
           })
+        },
+        cacheHandle(){
+          this.message = "New message"
         }
     },
     beforeRouteEnter(to,from,next){
@@ -51,6 +56,39 @@ export default {
         // console.log(this.message);
         next();
     },
+    beforeCreate(){
+        console.log("Before Create");
+    },
+    created(){
+        console.log("Created");
+    },
+    beforeMount(){
+        console.log("Before Mount");
+    },
+    mounted(){
+        console.log("Mounted");
+    },
+    beforeUpdate(){
+        console.log("Before Update");
+    },
+    //some content changes
+    updated(){
+        console.log("Updated");
+    },
+    beforeDestroy(){
+        console.log("Before Destroy");
+    },
+    //it is called when a page is removed by routing
+    destroyed(){
+        console.log("Destroyed")
+    },
+    //two function only triggered when keep-alive is used
+    activated(){
+      console.log("activated")
+    },
+    deactivated(){
+      console.log("deactivated")
+    }
 }
 </script>
 

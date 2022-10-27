@@ -5,13 +5,15 @@ import "./ModuleA/EventBus/eventbus.js";
 import "./ModuleC/directives";
 //import Toast from './ModuleC/plugins/toast';
 //import "./ModuleC/plugins/toast/toast.css"
-import "./ModuleC/filter"
-
+import "./ModuleC/filter";
+import VueRouter from 'vue-router';
+import router from './router';
 import axios from 'axios';
+
+Vue.prototype.$axios = axios //receive axios into prototype so tha import once only
 //default root DNS
 //axios.defaults.baseURL = 'http://iwenwiki.com';
 //axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-Vue.prototype.$axios = axios //receive axios into prototype so tha import once only
 
 axios.interceptors.request.use(
   config=>{
@@ -32,6 +34,7 @@ error=>{
 
 
 Vue.config.productionTip = false
+Vue.use(VueRouter)
 //Vue.use(Toast)
 // Vue.mixin({
   //global mixin
@@ -44,13 +47,6 @@ Vue.config.productionTip = false
 // })
 
 new Vue({
-  // data:{
-  //   version:"v.2.x"
-  // },
-  // methods:{
-  //   setVersion(){
-  //     return "v.3.0.x"
-  //   }
-  // },
   render: h => h(App),
+  router
 }).$mount('#app')

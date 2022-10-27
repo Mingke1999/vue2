@@ -48,10 +48,13 @@
         {{"Another Book" | author | money}}
       </p>
     </div> -->
-    
     <!-- Module D -->
     <!-- <FirstAxios/> -->
-    <PackagingVue/>
+    <!-- <PackagingVue/> -->
+    <!--Module E-->
+    <router-view></router-view>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/dash">Dashboard</router-link>
   </div>
 </template>
 
@@ -72,14 +75,13 @@
 // import Child1 from './ModuleA/EventBus/Child1.vue';
 // import Child2 from './ModuleA/EventBus/Child2.vue';
 // import Animation from './ModuleB/Animation.vue';
-
 // import Minxins from './ModuleC/Mixins.vue';
 // import Child from './ModuleC/Child.vue';
 //import MyDirectivesVue from './ModuleC/MyDirectives.vue';
 //import RenderVue from './ModuleC/rendering.vue';
 
 //import FirstAxios from './ModuleD/FirstAxios.vue'
-import PackagingVue from './ModuleD/Packaging.vue'
+//import PackagingVue from './ModuleD/Packaging.vue'
 export default {
   name: 'App',
   components: {
@@ -92,13 +94,13 @@ export default {
     // LifeCycleVue,
     // Child1,
     // Child2
-    //Animation
+    //Animation,
     // Minxins,
     // Child,
     //MyDirectivesVue,
     //RenderVue
     //FirstAxios
-    PackagingVue
+    //PackagingVue
 },
 data(){
 return{

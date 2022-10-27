@@ -4,6 +4,12 @@ import AD from '../ModuleE/AD.vue';
 
 const router = new VueRouter({
     mode:'history',
+    scrollBehavior:(to,from,savedPosition)=>{
+        return{
+            x:0,
+            y:300
+        }
+    },
     routes:[
         // {
         //     path:'/home',
@@ -78,7 +84,7 @@ router.beforeEach((to,from,next)=>{
     //console.log(to);
     if(to.matched.some(record=>record.meta.requiresAuth)){
         //make the system requiring authLogin
-        const token = false;
+        const token = true;
         if(token){  //user logged in
             next();
         }else{  //user needs to login

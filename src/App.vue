@@ -53,9 +53,9 @@
     <!-- <PackagingVue/> -->
     <!--Module E-->
     <!-- <router-link to="/">Home</router-link> | -->
-    <router-link :to="{name:'home'}">Home</router-link> |
-    <router-link to="/dash">Dashboard</router-link> |
-    <router-link to="/service/1001">Services</router-link>
+    <router-link exact :to="{name:'home'}">Home</router-link> |
+    <router-link exact to="/dash">Dashboard</router-link> |
+    <router-link exact to="/service/1001">Services</router-link>
     <router-view/>
     <router-view name="ad"></router-view>
   </div>
@@ -155,5 +155,9 @@ filters:{ //must be filters
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.router-link-exact-active{
+  color:red;
 }
 </style>

@@ -5,12 +5,14 @@ export default new VueRouter({
     routes:[
         {
             path:'/',
-            component:Home
+            component:Home,
+            name:'home'
         },
         {
             path:'/dash',
             //async loading
             component:()=>import('../ModuleE/Dashboard.vue'),
+            name:'dashboard'
            
         },{
             path:'/details/:id',
@@ -24,8 +26,15 @@ export default new VueRouter({
                     path:'review',
                     component:()=>import('../ModuleE/Details/Review.vue')
                 }
-            ]
-        },{
+            ],
+            name:'detail'
+        },
+        {
+            path:'/service',
+            component:()=>import('../ModuleE/Services.vue'),
+            name:'service'
+        },
+        {
             path:'*',
             component:()=>import('../ModuleE/NotFound.vue')
         }

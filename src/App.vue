@@ -52,8 +52,10 @@
     <!-- <FirstAxios/> -->
     <!-- <PackagingVue/> -->
     <!--Module E-->
-    <router-link to="/">Home</router-link> |
-    <router-link to="/dash">Dashboard</router-link>
+    <!-- <router-link to="/">Home</router-link> | -->
+    <router-link :to="{name:'home'}">Home</router-link> |
+    <router-link to="/dash">Dashboard</router-link> |
+    <router-link to="/service">Services</router-link>
     <router-view></router-view>
   </div>
 </template>

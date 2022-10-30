@@ -53,13 +53,15 @@
     <!-- <PackagingVue/> -->
     <!--Module E-->
     <!-- <router-link to="/">Home</router-link> | -->
-    <router-link exact :to="{name:'home'}">Home</router-link> |
+    <!-- <router-link exact :to="{name:'home'}">Home</router-link> |
     <router-link exact to="/dash">Dashboard</router-link> |
     <router-link exact to="/service/1001">Services</router-link>
     <keep-alive>
       <router-view/>
     </keep-alive>
-    <router-view name="ad"></router-view>
+    <router-view name="ad"></router-view> -->
+    <!--Module X-->
+    <VueXVue/>
   </div>
 </template>
 
@@ -87,6 +89,8 @@
 
 //import FirstAxios from './ModuleD/FirstAxios.vue'
 //import PackagingVue from './ModuleD/Packaging.vue'
+
+import VueXVue from './ModuleX/VueX.vue';
 export default {
   name: 'App',
   components: {
@@ -106,6 +110,7 @@ export default {
     //RenderVue
     //FirstAxios
     //PackagingVue
+    VueXVue
 },
 data(){
 return{
@@ -159,7 +164,7 @@ filters:{ //must be filters
   margin-top: 60px;
 }
 
-.router-link-exact-active{
+/* .router-link-exact-active{
   color:red;
-}
+} */
 </style>

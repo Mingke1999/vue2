@@ -6,9 +6,12 @@ import "./ModuleC/directives";
 //import Toast from './ModuleC/plugins/toast';
 //import "./ModuleC/plugins/toast/toast.css"
 import "./ModuleC/filter";
+import axios from 'axios';
 import VueRouter from 'vue-router';
 import router from './router';
-import axios from 'axios';
+import 'es6-promise';
+import vueX from 'vuex';
+
 
 Vue.prototype.$axios = axios //receive axios into prototype so tha import once only
 //default root DNS
@@ -32,7 +35,7 @@ error=>{
   Promise.reject(error)
 })
 
-
+Vue.use(vueX)
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 //Vue.use(Toast)
@@ -45,8 +48,13 @@ Vue.use(VueRouter)
 //     console.log("Component Mounted")
 //   }
 // })
-
+const store = new vueX.Store({
+  state:{
+    userId:0
+  }
+})
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app')

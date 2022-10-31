@@ -10,11 +10,18 @@
         </li>
     </ul>
     <button @click="newKeys">New Key-Value Pair</button>
+    <hr/>
+    <ul>
+        <li v-for="(item,index) in events" :key="index">
+            <p>{{item}}</p>
+        </li>
+    </ul>
+    <button @click="newEvents">Fetch Events</button>
   </div>
 </template>
 
 <script>
-import { mapState,mapMutations } from 'vuex';
+import { mapState,mapMutations,mapActions } from 'vuex';
 import {ADD_NUM} from './constants'
 export default {
     // computed:{
@@ -27,12 +34,13 @@ export default {
     // })
     //computed:mapState(["userId"])
     computed:{
-        ...mapState(["userId","details"])
+        ...mapState(["userId","details","events"])
         //computed read
     },
     methods:{
         //methods operates
         ...mapMutations(["updateUser"]),
+        ...mapActions(["getEvents"]),
         addHandle(){
             this.$store.commit(ADD_NUM,parseInt(this.num))
            
@@ -57,6 +65,10 @@ export default {
                 key:"job",
                 value:"ICT"
             })
+        },
+        newEvents(){
+            //this.$store.dispatch("getEvents")
+            this.getEvents();
         }  
     },
     data(){

@@ -1,6 +1,11 @@
 <template>
   <div>
-    <h3>{{userId}}</h3>
+    <h3>{{"Vue X"}}</h3>
+    <p>{{$store.getters.validEvents}}</p>
+    <p>{{$store.getters.getEventEasy('eventeasy')}}</p>
+
+    <p>{{validEvents}}</p>
+    <p>{{"mapGetters"+getEventEasy('azurewebsites')}}</p>
     <input type="text" v-model="num"/>
     <button @click="addHandle">+</button>
     <button @click="minHandle">-</button>
@@ -21,7 +26,7 @@
 </template>
 
 <script>
-import { mapState,mapMutations,mapActions } from 'vuex';
+import { mapState,mapMutations,mapActions,mapGetters } from 'vuex';
 import {ADD_NUM} from './constants'
 export default {
     // computed:{
@@ -34,7 +39,8 @@ export default {
     // })
     //computed:mapState(["userId"])
     computed:{
-        ...mapState(["userId","details","events"])
+        ...mapState(["userId","details","events"]),
+        ...mapGetters(["validEvents","getEventEasy"])
         //computed read
     },
     methods:{

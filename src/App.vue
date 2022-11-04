@@ -61,7 +61,9 @@
     </keep-alive>
     <router-view name="ad"></router-view> -->
     <!--Module X-->
-    <VueXVue/>
+    <!-- <VueXVue/> -->
+    <Modules/>
+    
   </div>
 </template>
 
@@ -90,7 +92,8 @@
 //import FirstAxios from './ModuleD/FirstAxios.vue'
 //import PackagingVue from './ModuleD/Packaging.vue'
 
-import VueXVue from './ModuleX/VueX.vue';
+//import VueXVue from './ModuleX/VueX.vue';
+import Modules from './ModuleX/Modules.vue';
 export default {
   name: 'App',
   components: {
@@ -107,10 +110,11 @@ export default {
     // Minxins,
     // Child,
     //MyDirectivesVue,
-    //RenderVue
-    //FirstAxios
-    //PackagingVue
-    VueXVue
+    //RenderVue,
+    //FirstAxios,
+    //PackagingVue,
+    //VueXVue,
+    Modules
 },
 data(){
 return{

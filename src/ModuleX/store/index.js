@@ -3,7 +3,8 @@ import 'es6-promise';
 import vueX from 'vuex';
 import { ADD_NUM } from '../constants';
 import axios from 'axios';
-
+import services from '../modules/services';
+import events from '../modules/events';
 Vue.use(vueX)
 
 const store = new vueX.Store({
@@ -50,6 +51,10 @@ const store = new vueX.Store({
       getEventEasy:(state)=>(name)=>{
         return "name: "+name + " user number: "+state.userId
       }
+    },
+    modules:{
+      services,
+      events
     }
   })
 

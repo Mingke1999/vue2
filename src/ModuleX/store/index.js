@@ -26,18 +26,20 @@ const store = new vueX.Store({
             Vue.set(state.details,obj.key,obj.value)
         },
         updateEvents(state,events){
-          state.events = events.$values[0]
+          state.events = events
         }
     },
     actions:{
       getEvents(context){
-        axios.get("https://eventeasyau.azurewebsites.net/api/event/getallactiveevents")
+        axios.get("https://eventeasyau.azurewebsites.net/api/event/getall")
         .then(res=>{
           if(res.status === 200){
-            context.commit("updateEvents",res.data)
+            context.commit("updateEvents",res.data.$values)
           }
         }).then(err=>{
-            context.commit("updateEvents",[])
+            //context.commit("updateEvents",[])
+            //don't commit any empty list otherwise get no result
+            console.log(err)
         })
       }
     }

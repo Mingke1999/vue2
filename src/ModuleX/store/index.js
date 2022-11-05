@@ -7,14 +7,25 @@ import services from '../modules/services';
 import events from '../modules/events';
 Vue.use(vueX)
 
-const store = new vueX.Store({
+const logPlugin = store =>{
+  //console.log(store)
+  store.subscribe((mutation,state)=>{
+    console.log("mutation",mutation);
+    console.log("state",state)
+  })
+}
+export default new vueX.Store({
+    plugins:[logPlugin],
+    strict:false,
     state:{
       userId:100,
       details:{
         name:'mingke',
         mood:'happy'
       },
-      events:[]
+      events:[],
+      words:'',
+      message:""
     },
     mutations:{
         [ADD_NUM](state,num){
@@ -28,6 +39,12 @@ const store = new vueX.Store({
         },
         updateEvents(state,events){
           state.events = events
+        },
+        updateWords(state,words){
+          state.words = words
+        },
+        updateMessage(state,message){
+          state.message = message
         }
     },
     actions:{
@@ -57,5 +74,3 @@ const store = new vueX.Store({
       events
     }
   })
-
-  export default store

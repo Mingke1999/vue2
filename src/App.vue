@@ -62,7 +62,8 @@
     <router-view name="ad"></router-view> -->
     <!--Module X-->
     <!-- <VueXVue/> -->
-    <Modules/>
+    <!-- <Modules/> -->
+    <SearchVue/>
     
   </div>
 </template>
@@ -93,7 +94,8 @@
 //import PackagingVue from './ModuleD/Packaging.vue'
 
 //import VueXVue from './ModuleX/VueX.vue';
-import Modules from './ModuleX/Modules.vue';
+//import Modules from './ModuleX/Modules.vue';
+import SearchVue from './ModuleX/Search.vue';
 export default {
   name: 'App',
   components: {
@@ -114,7 +116,8 @@ export default {
     //FirstAxios,
     //PackagingVue,
     //VueXVue,
-    Modules
+    //Modules,
+    SearchVue
 },
 data(){
 return{

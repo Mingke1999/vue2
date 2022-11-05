@@ -10,8 +10,8 @@ export default{
     },
     actions:{
         asyncMoreServices({dispatch,commit,getters,rootGetters},num){
-            console.log("rootGetters",rootGetters)
-            console.log("getters",getters)
+            // console.log("rootGetters",rootGetters)
+            // console.log("getters",getters)
             commit("moreServices",num)
         }
     },

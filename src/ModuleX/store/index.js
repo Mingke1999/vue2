@@ -5,6 +5,7 @@ import { ADD_NUM } from '../constants';
 import axios from 'axios';
 import services from '../modules/services';
 import events from '../modules/events';
+import getters from './getters';
 Vue.use(vueX)
 
 const logPlugin = store =>{
@@ -14,7 +15,7 @@ const logPlugin = store =>{
     console.log("state",state)
   })
 }
-export default new vueX.Store({
+const store = new vueX.Store({
     plugins:[logPlugin],
     strict:false,
     state:{
@@ -61,16 +62,20 @@ export default new vueX.Store({
         })
       }
     },
-    getters:{
-      validEvents(state){
-        return state.userId >= 100 ? "Database is large":'A startup database'
-      },
-      getEventEasy:(state)=>(name)=>{
-        return "name: "+name + " user number: "+state.userId
-      }
-    },
+    getters,
     modules:{
       services,
       events
     }
   })
+
+  if(module.hot){
+    module.hot.accept(['./getters'],()=>{
+      const newGetters = require("./getters").default;
+      store.hotUpdate({
+        getters:newGetters
+      })
+    })
+    
+  }
+  export default store
